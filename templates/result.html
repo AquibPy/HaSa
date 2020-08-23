@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>HaSa Detection App</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+	</head>
+
+	<body>
+
+		<!-- Website Title -->
+		<div class="container">
+			<h2 class='container-heading'><span>HaSa Detector</span> for detecting whether text is depressive or positive</h2>
+	        	<div class='description'>
+				<p>A Machine Learning Web App, Built with Flask.</p>
+			</div>
+		</div>
+
+		<!-- Result -->
+		<div class="results">
+			{% if prediction==1 %}
+				<h1>Prediction: <span class='danger'>Gotcha! This is a Depressive message.</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='pain.webp') }}" alt="SPAM Image">
+			{% elif prediction==0 %}
+				<h1>Prediction: <span class='safe'>Great! This is NOT a Depressive message.</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='happy.webp') }}" alt="Not a Depressive image">
+			{% endif %}
+		</div>
+
+		<!-- Footer -->
+		<div class='footer'>
+			<div class="contact">
+				<a target="_blank" href="https://github.com/AquibPy"><i class="fab fa-github fa-lg contact-icon"></i></a>
+				<a target="_blank" href="https://www.linkedin.com/in/aquib-mohd-182b2a71/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+			</div>
+			<p class='footer-description'>Made with ❤️ by Mohd Aquib.</p>
+		</div>
+
+	</body>
+</html>
