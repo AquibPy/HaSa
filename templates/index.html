@@ -1,39 +1,157 @@
 <!DOCTYPE html>
-
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>HaSa Detection App</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
-    </head>
-
-    <body>
-
-        <!-- Website Title -->
-    	<div class="container">
-    		<h2 class='container-heading'><span>HaSa Detector</span> for detecting whether text is depressive or positive</h2>
-            <div class='description'>
-    			<p>A Machine Learning Web App, Built with Flask.</p>
-    		</div>
-    	</div>
-
-        <!-- Text Area -->
-    	<div class="ml-container">
-    		<form action="{{ url_for('predict') }}" method="POST">
-        		<textarea class='message-box' name="message" rows="15" cols="75" placeholder="Enter Your Message Here..."></textarea><br/>
-        		<input type="submit" class="my-cta-button" value="Predict">
-        	</form>
-    	</div>
-
-        <!-- Footer -->
-        <div class='footer'>
-            <div class="contact">
-                <a target="_blank" href="https://github.com/AquibPy"><i class="fab fa-github fa-lg contact-icon"></i></a>
-                <a target="_blank" href="https://www.linkedin.com/in/aquib-mohd-182b2a71/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HaSa Application</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
+    ></script>
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="container">
+        <div class="top-wrapper">
+          <div class="logo-wrapper d-inline-block">
+            <a href="/">
+              <img
+                src="{{ url_for('static', filename='img/HappySad.png') }}"
+                alt="HaSa Logo"
+              />
+            </a>
+          </div>
+          <nav class="pull-right">
+            <ul class="nav-wrapper">
+              <li class="hidden-xs">
+                <a href="/" title="HaSa Application">HOME</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="main-wrapper">
+            <h1>HaSa App</h1>
+            <h4>A Depression Text Detector - A Machine Learning Web App</h4>
+            <div class="buttons-wrapper">
+              <a href="#info-wrapper" class="btn btn-primary d-inline-block"
+                >See More</a
+              >
             </div>
-            <p class='footer-description'>Made with ❤️ by Mohd Aquib.</p>
+          </div>
         </div>
-
-    </body>
+      </div>
+    </header>
+    <div class="about-us-wrapper" id="info-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 highlight-block">
+            <div class="icon-wrapper">
+              <img src="{{ url_for('static', filename='img/icon-1.png') }}" />
+            </div>
+            <h5>Facts</h5>
+            <p>
+              Depression is a mood disorder that can affect a person's daily
+              life. It may be described as feelings of sadness, loss, or anger.
+              According to Appolo Hospitals there are 10 Million cases per year
+              in India.
+            </p>
+          </div>
+          <div class="col-md-4 highlight-block">
+            <div class="icon-wrapper">
+              <img src="{{ url_for('static', filename='img/icon-2.png') }}" />
+            </div>
+            <h5>Solution</h5>
+            <p>
+              It's important to take action against depression - it doesn't just
+              go away on its own.Being depressed can make you feel helpless.
+              You're not. Along with therapy and sometimes medication, there's a
+              lot you can do on your own to fight back. Changing your behavior
+              -- your physical activity, lifestyle, and even your way of
+              thinking -- are all natural depression treatments.
+            </p>
+          </div>
+          <div class="col-md-4 highlight-block">
+            <div class="icon-wrapper">
+              <img src="{{ url_for('static', filename='img/icon-3.png') }}" />
+            </div>
+            <h5>Our Idea</h5>
+            <p>
+              It's just a small initiative against depression. Not all people
+              but some people put Depression quotes in stories of social media
+              or in tweets. So, We trained our model like this you just input
+              that quote in our app and it will tell you the person is sad or
+              depressed so you can talk to him/her about problem.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="input-wrapper">
+      <div class="container">
+        <div class="content">
+          <h4>Put your Text Here</h4>
+        </div>
+        <div class="input-wrapper-form">
+          <form
+            action="{{ url_for('predict') }}"
+            method="POST"
+            class="form-wrapper"
+          >
+            <div class="form-group">
+              <textarea
+                class="form-control"
+                name="message"
+                id="exampleFormControlTextarea1"
+                rows="3"
+              ></textarea>
+              <input type="submit" value="Predict" class="button m-2" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer class="page-footer">
+      <div class="container">
+        <div class="social-wrapper">
+          <p>If you like it, Drop a ⭐ on repository here</p>
+          <a
+            href="https://github.com/AquibPy/HaSa"
+            target="_blank"
+            class="icon"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <p>
+          Copyright 2020 : Made with ❤️ by
+          <a
+            href="https://www.linkedin.com/in/mohd-aquib-182b2a71/"
+            title="Aquib's Profile"
+            target="_blank"
+            >Aquib</a
+          >
+          and
+          <a
+            href="https://www.linkedin.com/in/nikhil-upadhyay-166673150/"
+            title="Nikhil's Profile"
+            target="_blank"
+            >Nikhil</a
+          >
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
