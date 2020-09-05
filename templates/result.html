@@ -1,226 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HaSa Application - Result</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      defer
-      src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
-    ></script>
-  </head>
-  <body>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+</head>
+
+<body>
     <header class="result-header">
-      <div class="container">
-        <div class="top-wrapper">
-          <div class="logo-wrapper d-inline-block">
-            <a href="/" title="HaSa Application">
-              <img
-                src="{{ url_for('static', filename='img/HappySad.png') }}"
-                alt="HaSa Logo"
-              />
-            </a>
-          </div>
-          <nav class="pull-right">
-            <ul class="nav-wrapper">
-              <li class="hidden-xs">
-                <a href="/" title="HaSa Application">HOME</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="main-wrapper">
-            <h2>Thank You! For Using Our App</h2>
-          </div>
+        <div class="container">
+            <div class="top-wrapper">
+                <div class="logo-wrapper d-inline-block">
+                    <a href="/" title="HaSa Application">
+                        <img src="{{ url_for('static', filename='img/HappySad.png') }}" alt="HaSa Logo" width="150px" height="150px" />
+                    </a>
+                </div>
+                <nav class="pull-right">
+                    <ul class="nav-wrapper">
+                        <li class="hidden-xs">
+                            <a href="/" title="HaSa Application">HOME</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="main-wrapper">
+                    <h2>Thank You! For Using Our App</h2>
+                </div>
+            </div>
         </div>
-      </div>
     </header>
-    <div class="result-wrapper">
-      <div class="container">
-        {% if prediction==1 %}
-        <div class="render-result">
-          <div class="result-text">
-            <h2>Umm!! This is depressing Text Buddy 🙁</h2>
-            <p>There are some articles and Resources that may help you</p>
-          </div>
-          <div class="card-group">
-            <div
-              class="card promoting-card shadow p-3 mb-5 mr-2 bg-white rounded"
-              id="myCard"
-            >
-              <div class="card-body d-flex flex-row">
-                <img
-                  src="{{ url_for('static', filename='img/kindpng_7860959.png') }}"
-                  class="rounded-circle mr-3"
-                  height="50px"
-                  width="50px"
-                  alt="avatar"
-                />
-
-                <div>
-                  <h4 class="card-title font-weight-bold mb-2">
-                    Coping with Depression
-                  </h4>
+    <div class="result-wrapper" id="resultPage">
+        <div class="container">
+            {% if prediction==1 %}
+            <div class="render-result">
+                <div class="result-text">
+                    <h2>Umm!! This is depressing Text Buddy 🙁</h2>
+                    <p>There are some articles and Resources that may help you</p>
                 </div>
-              </div>
+                <div class="card-group">
+                    <div class="card promoting-card shadow p-3 mb-5 mr-2 bg-white rounded" id="myCard">
+                        <div class="card-body d-flex flex-row">
+                            <img src="{{ url_for('static', filename='img/kindpng_7860959.png') }}" class="rounded-circle mr-3" height=50px width=50px alt="avatar" />
 
-              <div class="view overlay">
-                <img
-                  class="card-img-top rounded-0 mt-2"
-                  src="https://www.helpguide.org/wp-content/uploads/person-laying-in-grass-field-1536.jpg"
-                  alt="Card image cap"
-                />
-                <a href="#!">
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <div class="collapse-content">
-                  <a
-                    class="btn btn-flat btn-success"
-                    href="https://www.helpguide.org/articles/depression/coping-with-depression.htm"
-                    >Read More</a
-                  >
+                            <div>
+                                <h4 class="card-title font-weight-bold mb-2">
+                                    Coping with Depression
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="view overlay">
+                            <img class="card-img-top rounded-0 mt-2" width=150px height=150px src="https://www.helpguide.org/wp-content/uploads/person-laying-in-grass-field-1536.jpg" alt="Card image cap" />
+                            <a href="#!">
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <div class="collapse-content">
+                                <a class="btn btn-flat btn-success" href="https://www.helpguide.org/articles/depression/coping-with-depression.htm">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card promoting-card shadow p-3 mr-2 mb-5 bg-white rounded" id="myCard">
+                        <div class="card-body d-flex flex-row">
+                            <img src="{{ url_for('static', filename='img/Yoda.png') }}" class="rounded-circle mr-3" height=50px width=50px alt="avatar" />
+
+                            <div>
+                                <h4 class="card-title font-weight-bold mb-2">
+                                    Fight Depression Naturally
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="view overlay">
+                            <img width="150px" height="150px" class="card-img-top rounded-0 mt-2" src="https://images.unsplash.com/photo-1598919053400-16c846eca803?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1330&q=80" alt="Card image cap" />
+                            <a href="#!">
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <div class="collapse-content">
+                                <a class="btn btn-flat btn-success" href="https://www.healthline.com/health/depression/how-to-fight-depression">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card promoting-card shadow p-3 mr-2 mb-5 bg-white rounded" id="myCard">
+                        <div class="card-body d-flex flex-row">
+                            <img src="{{ url_for('static', filename='img/kindpng_7860959.png') }}" class="rounded-circle mr-3" height=50px width=50px alt="avatar" />
+
+                            <div>
+                                <h4 class="card-title font-weight-bold mb-2">
+                                    7 Powerful Tips to overcome with Depression
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="view overlay" style="margin-top: -27px;">
+                            <img class="card-img-top rounded-0 mt-2" src="https://images.unsplash.com/photo-1530747349247-78b098bdfc79?ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80" alt="Card image cap" width="150px" height="150px" />
+                            <a href="#!">
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <div class="collapse-content">
+                                <a class="btn btn-flat btn-success" href="https://www.psychologytoday.com/us/blog/anxiety-zen/201605/depression-7-powerful-tips-help-you-overcome-bad-moods">Read
+                  More</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div
-              class="card promoting-card shadow p-3 mr-2 mb-5 bg-white rounded"
-              id="myCard"
-            >
-              <div class="card-body d-flex flex-row">
-                <img
-                  src="{{ url_for('static', filename='img/Yoda.png') }}"
-                  class="rounded-circle mr-3"
-                  height="50px"
-                  width="50px"
-                  alt="avatar"
-                />
-
-                <div>
-                  <h4 class="card-title font-weight-bold mb-2">
-                    Fight Depression Naturally
-                  </h4>
+            {% elif prediction==0 %}
+            <div class="render-result">
+                <h2 class="m-4">Not a Problem!😎 This is not a depressing Text</h2>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="{{ url_for('static', filename='img/joker.mp4') }}" width="150px" height="150px"></iframe>
                 </div>
-              </div>
-
-              <div class="view overlay">
-                <img
-                  class="card-img-top rounded-0 mt-2"
-                  src="https://images.unsplash.com/photo-1598919053400-16c846eca803?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1330&q=80"
-                  alt="Card image cap"
-                />
-                <a href="#!">
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <div class="collapse-content">
-                  <a
-                    class="btn btn-flat btn-success"
-                    href="https://www.healthline.com/health/depression/how-to-fight-depression"
-                    >Read More</a
-                  >
-                </div>
-              </div>
+                <p>Feeling Horny! Please talk with our Bot!</p>
             </div>
-            <div
-              class="card promoting-card shadow p-3 mr-2 mb-5 bg-white rounded"
-              id="myCard"
-            >
-              <div class="card-body d-flex flex-row">
-                <img
-                  src="{{ url_for('static', filename='img/kindpng_7860959.png') }}"
-                  class="rounded-circle mr-3"
-                  height="50px"
-                  width="50px"
-                  alt="avatar"
-                />
-
-                <div>
-                  <h4 class="card-title font-weight-bold mb-2">
-                    7 Powerful Tips to overcome with Depression
-                  </h4>
-                </div>
-              </div>
-
-              <div class="view overlay">
-                <img
-                  class="card-img-top rounded-0 mt-2"
-                  src="https://images.unsplash.com/photo-1530747349247-78b098bdfc79?ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
-                  alt="Card image cap"
-                />
-                <a href="#!">
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <div class="collapse-content">
-                  <a
-                    class="btn btn-flat btn-success"
-                    href="https://www.psychologytoday.com/us/blog/anxiety-zen/201605/depression-7-powerful-tips-help-you-overcome-bad-moods"
-                    >Read More</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
+            {% endif %}
         </div>
-        {% elif prediction==0 %}
-        <div class="render-result">
-          <h2 class="m-4">Not a Problem!😎 This is not a depressing Text</h2>
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe
-              class="embed-responsive-item"
-              src="{{ url_for('static', filename='img/joker.mp4') }}"
-            ></iframe>
-          </div>
-        </div>
-        {% endif %}
-      </div>
+        <iframe id="frame" style=" border: 1px solid transparent;
+        box-shadow: 0px 19px 147px -41px rgba(0,0,0,0.75);
+        position: absolute;
+        left: 80%;
+        bottom: 3%;
+        position: fixed;" class="b_frame" height=350px allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/710c1a23-eda6-436b-9c3c-9e7408328b4b"></iframe>
     </div>
     <footer class="page-footer">
-      <div class="container">
-        <div class="social-wrapper">
-          <p>If you like it, Drop a ⭐ on repository here</p>
-          <a
-            href="https://github.com/AquibPy/HaSa"
-            target="_blank"
-            class="icon"
-          >
-            <i class="fab fa-github"></i>
-          </a>
+        <div class="container">
+            <div class="social-wrapper">
+                <p>If you like it, Drop a ⭐ on repository here</p>
+                <a href="https://github.com/AquibPy/HaSa" target="_blank" class="icon">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <p>
+                Copyright 2020 : Made with ❤️ by
+                <a href="https://www.linkedin.com/in/mohd-aquib-182b2a71/" title="Aquib's Profile" target="_blank">Aquib</a> and
+                <a href="https://www.linkedin.com/in/nikhil-upadhyay-166673150/" title="Nikhil's Profile" target="_blank">Nikhil</a>
+            </p>
         </div>
-        <p>
-          Copyright 2020 : Made with ❤️ by
-          <a
-            href="https://www.linkedin.com/in/mohd-aquib-182b2a71/"
-            title="Aquib's Profile"
-            target="_blank"
-            >Aquib</a
-          >
-          and
-          <a
-            href="https://www.linkedin.com/in/nikhil-upadhyay-166673150/"
-            title="Nikhil's Profile"
-            target="_blank"
-            >Nikhil</a
-          >
-        </p>
-      </div>
     </footer>
-  </body>
+</body>
+
 </html>

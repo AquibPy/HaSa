@@ -1,257 +1,258 @@
 html {
-  position: relative;
-  min-height: 450px;
-  scroll-behavior: smooth;
+    position: relative;
+    min-height: 450px;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
-  font-size: 17.5px;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
+    font-family: "Montserrat", sans-serif;
+    font-size: 17.5px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
 }
 
 * {
-  outline: 0 !important;
+    outline: 0 !important;
 }
 
 .logo-wrapper img {
-  max-width: 70px;
+    max-width: 70px;
 }
 
 .pull-right ul {
-  margin-top: -50px;
+    margin-top: -50px;
 }
 
 .nav-wrapper a {
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #fff;
-  font-size: 16px;
-  margin-left: 25px;
-  margin-top: 25px;
-  transition: all 100ms ease-in;
-  -moz-transition: all 100ms ease-in;
-  -webkit-transition: all 100ms ease-in;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 25px;
+    margin-top: 25px;
+    transition: all 100ms ease-in;
+    -moz-transition: all 100ms ease-in;
+    -webkit-transition: all 100ms ease-in;
 }
 
 .nav-wrapper li {
-  list-style: none;
-  float: right;
-  vertical-align: middle;
+    list-style: none;
+    float: right;
+    vertical-align: middle;
 }
 
 .d-inline-block {
-  display: inline-block;
+    display: inline-block;
 }
 
 .top-wrapper {
-  padding-top: 30px;
+    padding-top: 30px;
 }
 
 .m-l-30 {
-  margin-left: 30px !important;
+    margin-left: 30px !important;
 }
 
 .page-header {
-  background-image: url("../static/img/Background.png");
-  background-position: center top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #090909;
-  background-attachment: fixed;
-  color: #fff;
-  min-height: 700px;
+    background-image: url("../static/img/Background.png");
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #090909;
+    background-attachment: fixed;
+    color: #fff;
+    min-height: 700px;
 }
 
 .result-header {
-  background-image: linear-gradient(rgb(0, 0, 0, 0.3), rgb(0, 0, 0, 0.3)),
-    url("../static/img/background-result.jpg");
-  background-position: center top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #090909;
-  color: #fff;
-  min-height: 450px;
+    background-image: linear-gradient(rgb(0, 0, 0, 0.3), rgb(0, 0, 0, 0.3)), url("../static/img/background-result.jpg");
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #090909;
+    color: #fff;
+    min-height: 450px;
 }
 
 .main-wrapper {
-  padding-top: 140px;
+    padding-top: 140px;
 }
 
 .main-wrapper h1 {
-  font-weight: 600;
-  font-size: 55px;
-  margin: 0 0 5px;
-  line-height: 75px;
+    font-weight: 600;
+    font-size: 55px;
+    margin: 0 0 5px;
+    line-height: 75px;
 }
 
 .main-wrapper h2 {
-  font-weight: 600;
-  font-size: 55px;
-  margin: auto;
-  text-align: center;
-  line-height: 75px;
+    font-weight: 600;
+    font-size: 55px;
+    margin: auto;
+    text-align: center;
+    line-height: 75px;
 }
 
 .main-wrapper h4 {
-  font-weight: 500;
-  max-width: 600px;
-  margin: 0;
-  font-size: 18px;
-  line-height: 32px;
+    font-weight: 500;
+    max-width: 600px;
+    margin: 0;
+    font-size: 18px;
+    line-height: 32px;
 }
 
 .collapse-content .fa.fa-heart:hover {
-  color: #f44336 !important;
+    color: #f44336 !important;
 }
+
 .collapse-content .fa.fa-share-alt:hover {
-  color: #0d47a1 !important;
+    color: #0d47a1 !important;
 }
 
 .result-wrapper {
-  background: #f1f3f3;
-  padding: 100px 0;
-  text-align: center;
+    background: #f1f3f3;
+    padding: 100px 0;
+    text-align: center;
 }
 
 #myCard {
-  width: 337px;
-  height: 450px;
-  box-shadow: #090909;
+    width: 337px;
+    height: 450px;
+    box-shadow: #090909;
 }
 
 .buttons-wrapper {
-  padding: 60px 0;
+    padding: 60px 0;
 }
 
 .btn {
-  font-weight: 500;
-  font-size: 16px;
-  color: #fff;
-  text-align: center;
-  padding: 14px 28px;
-  min-width: 230px;
-  border-radius: 30px;
-  -webkit-border-radius: 30px;
-  transition: all 100ms ease-in;
-  -moz-transition: all 100ms ease-in;
-  -webkit-transition: all 100ms ease-in;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    padding: 14px 28px;
+    min-width: 230px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    transition: all 100ms ease-in;
+    -moz-transition: all 100ms ease-in;
+    -webkit-transition: all 100ms ease-in;
 }
 
 .btn-primary {
-  background: #2c974b;
-  border: 2px solid #2c974b;
-  color: #fff;
+    background: #2c974b;
+    border: 2px solid #2c974b;
+    color: #fff;
 }
-.btn-primary:hover {
-  border: 2px solid #2c974b;
-  background: transparent;
-  color: #fff;
+
+.btnSubnmit:hover {
+    border: 2px solid #2c974b;
+    color: #2c974b;
 }
 
 .about-us-wrapper {
-  background: #f1f3f3;
-  padding: 100px 0;
-  text-align: center;
+    background: #f1f3f3;
+    padding: 100px 0;
+    text-align: center;
 }
 
 .about-us-wrapper .icon-wrapper {
-  width: 70px;
-  height: 75px;
-  margin: 0 auto;
-  display: block;
+    width: 70px;
+    height: 75px;
+    margin: 0 auto;
+    display: block;
 }
+
 .about-us-wrapper .icon-wrapper img {
-  height: 100px;
+    height: 100px;
 }
 
 .about-us-wrapper h5 {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 18px;
-  color: #2c974b;
-  margin: 40px 0 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    color: #2c974b;
+    margin: 40px 0 0;
 }
 
 .about-us-wrapper p {
-  font-size: 16px;
-  font-weight: 500;
-  max-width: 300px;
-  margin: 20px auto;
-  line-height: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    max-width: 300px;
+    margin: 20px auto;
+    line-height: 30px;
 }
 
 .input-wrapper {
-  background: #e8e8e8;
-  padding: 45px 0 35px;
-  overflow: hidden;
-  position: relative;
+    background: #e8e8e8;
+    padding: 45px 0 35px;
+    overflow: hidden;
+    position: relative;
 }
 
 .input-wrapper h4 {
-  font-size: 30px;
-  font-weight: 600;
-  margin: 0 0 4px;
-  color: #111;
-}
-
-.input-wrapper-form .form-control {
-  border: 0;
-  font-size: 13px;
-  height: 160px;
-  padding: 10px 20px;
-  background: #fdfdfd;
-  width: calc(100% - 70px);
-  box-shadow: -2px 2px 3px gainsboro;
-  border-radius: 3px;
-  max-width: 100%;
-  vertical-align: middle;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    color: #111;
 }
 
 .input-wrapper-form button {
-  background: #2c974b;
-  padding: 13px 18px;
-  border: 0;
-  color: #fff;
-  margin-left: -45px;
-  font-size: 14px;
-  vertical-align: middle;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  transition: all 200ms ease-in-out;
+    background: #2c974b;
+    padding: 13px 18px;
+    border: 0;
+    color: #fff;
+    margin-left: -45px;
+    font-size: 14px;
+    vertical-align: middle;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    transition: all 200ms ease-in-out;
 }
 
 .input-wrapper-form button:hover,
 .input-wrapper-form button[disabled] {
-  background: #111111;
+    background: #111111;
 }
 
 .page-footer {
-  background-color: #f1f3f3;
-  text-align: center;
-  color: #090909;
-  padding: 60px 20px;
+    background-color: #f1f3f3;
+    text-align: center;
+    color: #090909;
+    padding: 60px 20px;
+}
+
+
+/* .input-wrapper-form .textArea {
+    margin-bottom: 20px !important;
+} */
+
+textarea .form-control {
+    padding: 10px !important;
 }
 
 .page-footer .icon {
-  color: #c2c3c3;
-  font-size: 24px;
-  margin: 0 10px;
+    color: #c2c3c3;
+    font-size: 24px;
+    margin: 0 10px;
 }
 
 .page-footer .icon:hover {
-  color: #090909;
+    color: #090909;
 }
 
 .page-footer p {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 26px;
-  color: #a5a5a5;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 26px;
+    color: #a5a5a5;
 }
 
 .page-footer p a {
-  color: #ea2845;
-  font-weight: 600;
+    color: #ea2845;
+    font-weight: 600;
+}
+
+#resultPage {
+    position: relative;
 }
