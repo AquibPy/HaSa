@@ -13,6 +13,5 @@ jobs:
         with:
           image: aquibpy/hasa 
           registry: docker.io
-          dockerfile: Dockerfile.ci
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
