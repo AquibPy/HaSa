@@ -9,73 +9,148 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet" />
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <style>
+        .iframe-container {
+            position: fixed;
+            right: 0;
+            bottom: 3%;
+            height: 450px;
+            width: 400px; /* Set the width as needed */
+            overflow: hidden; /* Hide the overflow content */
+            box-shadow: 0px 19px 147px -41px rgba(0, 0, 0, 0.75);
+        }
+        .iframe-container:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 120px; /* Increased height for the black section */
+            background-color: black; /* Add black background color */
+            z-index: 1; /* Ensure it's on top of the iframe */
+        }
+        .iframe-container .heading-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 120px; /* Match the height of the black section */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white; /* Text color */
+            z-index: 2; /* Ensure it's on top of the black background */
+        }
+        .heading-container .main-heading {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0;
+        }
+        .heading-container .sub-heading {
+            font-size: 1em;
+            margin: 0;
+        }
+        .iframe-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0; /* Ensure iframe is behind the overlay */
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .chat-card {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .chat-card p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .chat-card button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .chat-card button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>
-    <header class="result-header">
-        <div class="container">
-            <div class="top-wrapper">
-                <div class="logo-wrapper d-inline-block">
+    <header class="result-header" style="position: relative; background-color: #f8f9fa; padding: 20px;">
+        <div class="container" style="position: relative; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+            <div class="top-wrapper" style="display: flex; justify-content: space-between; width: 100%;">
+                <!-- <div class="logo-wrapper d-inline-block">
                     <a href="/" title="HaSa Application">
                         <img src="{{ url_for('static', filename='img/HappySad.png') }}" alt="HaSa Logo" width="150px" height="150px" />
                     </a>
-                </div>
-                <nav class="pull-right">
+                </div> -->
+                <nav class="pull-right" style="position: absolute; bottom: 0; right: 0; margin-bottom: -50px; margin-right: -200px; color: white;">
                     <ul class="nav-wrapper">
                         <li class="hidden-xs">
-                            <a href="/" title="HaSa Application">HOME</a>
+                            <a href="/" title="HaSa Application">GO TO HOME</a>
                         </li>
                     </ul>
                 </nav>
-                <div class="main-wrapper">
-                    <h2>Thank You! For Using Our App</h2>
-                </div>
+            </div>
+            <div class="main-wrapper" style="position: absolute; bottom: 0; right: 0; margin-bottom: -600px; margin-right: -100px; color: black;">
+                <h2>For Using Our App!</h2>
             </div>
         </div>
     </header>
+    
     <div class="result-wrapper" id="resultPage">
         <div class="container">
             {% if prediction==1 %}
             <div class="render-result">
                 <div class="result-text">
-                    <h2>Umm!! This is depressing Text Buddy 🙁</h2>
-                    <p>There are some articles and Resources that may help you</p>
+                    <h2 style="color: #ffccb3;">Umm!! This is depressing Text Buddy 🙁</h2>
+                    <p style="color: darkmagenta;">There are some articles and Resources that may help you</p>
                 </div>
-                <div class="card-group">
-                    <div class="card promoting-card shadow p-3 mb-5 mr-2 bg-white rounded" id="myCard">
+                <div class="card-group d-flex justify-content-center" style="gap: 10px; margin-top: 50px;">
+                    <div class="card promoting-card shadow p-3 mb-5 rounded" id="myCard" style="background-color: #ffccb3; color: darkmagenta; width: 300px;">
                         <div class="card-body d-flex flex-row">
-                            <img src="{{ url_for('static', filename='img/kindpng_7860959.png') }}" class="rounded-circle mr-3" height=50px width=50px alt="avatar" />
-
+                            <img src="{{ url_for('static', filename='img/kindpng_7860959.png') }}" class="rounded-circle mr-3" height="50px" width="50px" alt="avatar" />
                             <div>
-                                <h4 class="card-title font-weight-bold mb-2">
-                                    Coping with Depression
-                                </h4>
+                                <h4 class="card-title font-weight-bold mb-2">Coping with Depression</h4>
                             </div>
                         </div>
-
                         <div class="view overlay">
-                            <img class="card-img-top rounded-0 mt-2" width=150px height=150px src="https://www.helpguide.org/wp-content/uploads/person-laying-in-grass-field-1536.jpg" alt="Card image cap" />
+                            <img class="card-img-top rounded-0 mt-2" width="150px" height="150px" src="https://www.helpguide.org/wp-content/uploads/person-laying-in-grass-field-1536.jpg" alt="Card image cap" />
                             <a href="#!">
                                 <div class="mask rgba-white-slight"></div>
                             </a>
                         </div>
                         <div class="card-body">
                             <div class="collapse-content">
-                                <a class="btn btn-flat btn-success" href="https://www.helpguide.org/articles/depression/coping-with-depression.htm">Read More</a>
+                                <a class="btn btn-flat btn-success custom-button" href="https://www.helpguide.org/articles/depression/coping-with-depression.htm">Read More</a>
                             </div>
                         </div>
                     </div>
-                    <div class="card promoting-card shadow p-3 mr-2 mb-5 bg-white rounded" id="myCard">
+                
+                    <div class="card promoting-card shadow p-3 mb-5 rounded" id="myCard" style="background-color: #ffccb3; color: darkmagenta; width: 300px;">
                         <div class="card-body d-flex flex-row">
-                            <img src="{{ url_for('static', filename='img/Yoda.png') }}" class="rounded-circle mr-3" height=50px width=50px alt="avatar" />
-
+                            <img src="{{ url_for('static', filename='img/Yoda.png') }}" class="rounded-circle mr-3" height="50px" width="50px" alt="avatar" />
                             <div>
-                                <h4 class="card-title font-weight-bold mb-2">
-                                    Fight Depression Naturally
-                                </h4>
+                                <h4 class="card-title font-weight-bold mb-2">Fight Depression Naturally</h4>
                             </div>
                         </div>
-
                         <div class="view overlay">
                             <img width="150px" height="150px" class="card-img-top rounded-0 mt-2" src="https://images.unsplash.com/photo-1598919053400-16c846eca803?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1330&q=80" alt="Card image cap" />
                             <a href="#!">
@@ -84,21 +159,18 @@
                         </div>
                         <div class="card-body">
                             <div class="collapse-content">
-                                <a class="btn btn-flat btn-success" href="https://www.healthline.com/health/depression/how-to-fight-depression">Read More</a>
+                                <a class="btn btn-flat btn-success custom-button" href="https://www.healthline.com/health/depression/how-to-fight-depression">Read More</a>
                             </div>
                         </div>
                     </div>
-                    <div class="card promoting-card shadow p-3 mr-2 mb-5 bg-white rounded" id="myCard">
+                
+                    <div class="card promoting-card shadow p-3 mb-5 rounded" id="myCard" style="background-color: #ffccb3; color: darkmagenta; width: 300px;">
                         <div class="card-body d-flex flex-row">
-                            <img src="{{ url_for('static', filename='img/kindpng_7860959.png') }}" class="rounded-circle mr-3" height=50px width=50px alt="avatar" />
-
+                            <img src="{{ url_for('static', filename='img/kindpng_7860959.png') }}" class="rounded-circle mr-3" height="50px" width="50px" alt="avatar" />
                             <div>
-                                <h4 class="card-title font-weight-bold mb-2">
-                                    7 Powerful Tips to overcome with Depression
-                                </h4>
+                                <h4 class="card-title font-weight-bold mb-2">7 Powerful Tips to Overcome Depression</h4>
                             </div>
                         </div>
-
                         <div class="view overlay" style="margin-top: -27px;">
                             <img class="card-img-top rounded-0 mt-2" src="https://images.unsplash.com/photo-1530747349247-78b098bdfc79?ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80" alt="Card image cap" width="150px" height="150px" />
                             <a href="#!">
@@ -107,30 +179,63 @@
                         </div>
                         <div class="card-body">
                             <div class="collapse-content">
-                                <a class="btn btn-flat btn-success" href="https://www.psychologytoday.com/us/blog/anxiety-zen/201605/depression-7-powerful-tips-help-you-overcome-bad-moods">Read
-                  More</a>
+                                <a class="btn btn-flat btn-success custom-button" href="https://www.psychologytoday.com/us/blog/anxiety-zen/201605/depression-7-powerful-tips-help-you-overcome-bad-moods">Read More</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                
+                <style>
+                    .custom-button {
+                        background-color: darkmagenta;
+                        color: white;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        text-decoration: none;
+                        display: inline-block;
+                        margin-top: 10px;
+                        transition: background-color 0.3s ease;
+                    }
+                
+                    .custom-button:hover {
+                        background-color: mediumvioletred;
+                    }
+                </style>
+                
             {% elif prediction==0 %}
             <div class="render-result">
-                <h2 class="m-4">Not a Problem!😎 This is not a depressing Text</h2>
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="{{ url_for('static', filename='img/joker.mp4') }}" width="150px" height="150px"></iframe>
+                <h2 class="m-4" style="color: darkmagenta;">Not a Problem!😎 This is not a depressing Text</h2>
+                <div class="embed-responsive embed-responsive-16by9 video-container">
+                    <iframe class="embed-responsive-item" src="{{ url_for('static', filename='img/joker2.mp4') }}" width="150px" height="150px"></iframe>
                 </div>
             </div>
+            
             {% endif %}
         </div>
-        <iframe id="frame" style=" border: 1px solid transparent;
-        box-shadow: 0px 19px 147px -41px rgba(0,0,0,0.75);
-        position: absolute;
-        left: 80%;
-        bottom: 3%;
-        position: fixed;" class="b_frame" height=350px allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/710c1a23-eda6-436b-9c3c-9e7408328b4b"></iframe>
+        <div class="chat-card" style="background-color: #ffccb3; color: darkmagenta; padding: 20px; border-radius: 10px; text-align: center; max-width: 600px; margin: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <p>If you're feeling lonely or depressed, we're here to listen. Don't hesitate to reach out and chat with us.</p>
+            <a href="chatbot" class="button" style="background-color: darkmagenta; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 10px; transition: background-color 0.3s ease;">
+                Start Chat
+            </a>
+        </div>
+        
+        <style>
+            .button:hover {
+                background-color: mediumvioletred;
+            }
+        </style>
+        
+         <!-- <div class="iframe-container"> -->
+        <!-- <div class="heading-container">
+            <div class="main-heading" style="font-family: cursive;">Chat With Us</div>
+            <div class="sub-heading"><em>Developed by Mohd Zaid Rashid</em></div>
+        </div>
+        <div class="iframe-wrapper">
+            <iframe id="frame" class="b_frame" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/710c1a23-eda6-436b-9c3c-9e7408328b4b"></iframe>
+        </div> -->
+    <!-- </div> -->
     </div>
-    <footer class="page-footer">
+    <footer class="page-footer-result">
         <div class="container">
             <div class="social-wrapper">
                 <p>If you like it, Drop a ⭐ on repository here</p>
@@ -139,7 +244,7 @@
                 </a>
             </div>
             <p>
-                Copyright 2020 : Made with ❤️ by
+                Copyright 2024 : Made with ❤️ by
                 <a href="https://www.linkedin.com/in/mohd-aquib-182b2a71/" title="Aquib's Profile" target="_blank">Aquib</a>
             </p>
         </div>
