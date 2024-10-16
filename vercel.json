@@ -1,12 +1,4 @@
 {
-    "version": 2,
-    "builds": [
-        {"src": "app.py", "use": "@vercel/python"}
-    ],
-    "routes": [
-        {"src": "/(.*)", "dest": "app.py"}
-    ]
-    ,
     "functions": {
         "/(.*)": {
             "excludeFiles": "{.next,*.cache,node_modules,public,app}/**"
